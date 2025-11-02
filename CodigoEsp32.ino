@@ -1,3 +1,21 @@
+/*
+ * =================================================================
+ * NOTA IMPORTANTE DE CONFIGURAÇÃO - VERSÃO 1.0 (AQUÁRIO MARINHO)
+ * =================================================================
+ * * Antes de compilar e carregar este código no ESP32, você DEVE
+ * atualizar as credenciais de rede e os IDs do Sinric Pro na
+ * SEÇÃO 2 (CONFIGURAÇÕES GLOBAIS).
+ * * 1. CREDENCIAIS WIFI: Altere WIFI_SSID, WIFI_PASS e OTA_PASSWORD.
+ * * 2. SINRIC PRO: Altere APP_KEY, APP_SECRET, DEVICE_ID_TEMP,
+ * DEVICE_ID_RELE_6 e DEVICE_ID_RELE_7 com os seus IDs válidos.
+ * * 3. HARDWARE IR: O Receptor IR (TSOP1838) deve estar conectado ao
+ * pino GPIO 15.
+ * * O não preenchimento correto destas informações resultará em falha
+ * na conexão Wi-Fi e/ou na comunicação com o Sinric Pro.
+ * * =================================================================
+ */
+
+//Desemvolvido Por Felipe Camargo suporte ou ajuda em felipe@lip.tec.br
 // =================================================================
 // 					 1. BIBLIOTECAS
 // =================================================================
@@ -27,16 +45,16 @@ const char* host = "aquario";
 WebServer server(80);
 
 // --- CREDENCIAIS DE REDE ---
-#define WIFI_SSID 			"Lucas Kamargo_EXT"
-#define WIFI_PASS 			"98831565"
-#define OTA_PASSWORD 		"9940"
+#define WIFI_SSID 			" " //insira aqui o nome da WIFI
+#define WIFI_PASS 			" " //Insira aui a senha da WIFI
+#define OTA_PASSWORD 		" "//Defina a senha para atualizar o codigo via OTA
 
 // --- NOVAS CREDENCIAIS SINRIC PRO (ATUALIZE ESTES VALORES!) ---
-#define APP_KEY 			"26d51a7a-415f-4fea-88e5-09317521e0e1"
-#define APP_SECRET 			"c956a710-7fe4-4af0-8043-34e80397097d-c9ec9d3e-553c-40ce-8aaf-ab462141ffc8"
-#define DEVICE_ID_TEMP 		"68fd23da5918d860c0aa8b35"
-#define DEVICE_ID_RELE_6 	"68fd1ff5ba649e246c12747e"
-#define DEVICE_ID_RELE_7 	"68fd2099acd5d3d66b55d4dc"
+#define APP_KEY 			" "//Insira aqui o APP KEY do SinricPro para vinclular com seu usuario
+#define APP_SECRET 			" " //Insira aqui o APP KEY do SinricPro para vinclular com seu usuario
+#define DEVICE_ID_TEMP 		" " //Insira aqui o  KEY do SinricPro para o sensor de temperatura, codigo obtido no site do SinricPro
+#define DEVICE_ID_RELE_6 	" " //Insira aqui o  KEY do SinricPro para o rele 6, codigo obtido no site do SinricPro
+#define DEVICE_ID_RELE_7 	" " //Insira aqui o  KEY do SinricPro para o rele 7 de temperatura, codigo obtido no site do SinricPro
 
 
 const char* sinricProRelayIDs[] = {
